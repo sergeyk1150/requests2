@@ -1,0 +1,147 @@
+.app {
+	width: 1024px;
+	padding: 0 20px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: grey;
+}
+
+h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 5em;
+}
+.form {
+	padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 30px;
+}
+
+.add {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(54, 57, 59, 0.5);
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.add > input {
+	background-color: transparent;
+	flex-grow: 1;
+	border: none;
+	font-size: 1.5em;
+	color: white;
+}
+
+.add > input:focus {
+	outline: none;
+}
+
+.input {
+	padding: 8px;
+	max-width: 100%;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(54, 57, 59, 0.5);
+	color: white;
+	outline: none;
+	font-size: 1.5em;
+}
+
+.todo {
+}
+.todo__list {
+	padding: 10px;
+	margin: 0;
+	counter-reset: item;
+}
+
+.todo__list-item {
+	position: relative;
+	display: grid;
+	grid-template-columns: 30px auto 100px 100px;
+	list-style: none;
+	padding: 10px;
+	margin-bottom: 0.5em;
+	background-color: bisque;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+
+.todo__list-item::before {
+	counter-increment: item;
+	content: counter(item);
+	margin-right: 16px;
+}
+
+.btn {
+	padding: 0.5em;
+	border: none;
+	border-radius: 5px;
+	margin-right: 1em;
+	background-color: rgba(214, 134, 15, 0.5);
+}
+
+.todo__list-item::first-letter {
+	text-transform: uppercase;
+}
+
+.change-content {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: grey;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 87px 38px rgba(34, 60, 80, 0.5);
+}
+
+.change-content button {
+	margin-right: 0;
+}
+
+.change-content__label {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.change-content__input {
+	padding: 10px;
+	width: 500px;
+	height: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(54, 57, 59, 0.5);
+	outline: none;
+	font-size: 1.5em;
+	color: white;
+}
+
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(50% 50%);
+	width: 25px;
+	height: 25px;
+	border: 5px solid grey;
+	border-radius: 50%;
+	border-left-color: transparent;
+	animation: loader 1s infinite;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
